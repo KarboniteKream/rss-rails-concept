@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @unread.user_id %>
+</p>
+
+<p>
+  <strong>Article:</strong>
+  <%= @unread.article_id %>
+</p>
+
+<%= link_to 'Edit', edit_unread_path(@unread) %> |
+<%= link_to 'Back', unreads_path %>

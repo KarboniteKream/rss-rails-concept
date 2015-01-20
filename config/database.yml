@@ -1,0 +1,10 @@
+development:
+    adapter: mysql2
+    encoding: utf8
+    host: localhost
+    username: root
+    password: gasilec
+    database: rss
+    pool: 5
+    timeout: 5000
+
