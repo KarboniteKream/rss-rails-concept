@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>kream</title>
+	  <%= favicon_link_tag       'favicon.png', rel: 'icon', type: 'image/png' %>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body id="index">
+	<header>
+		<h1><a href="/">kream.io</a><span class="version"> rss</span></h1>
+		<nav>
+			<ul>
+				<li><span class="button-secondary open-popup" target-popup="#register">Register</span></li>
+				<li><span class="button-primary open-popup" target-popup="#sign-in">Sign in</span></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<div id="banner">the next-generation <span class="rss">RSS</span> reader</div>
+		<div id="landing">
+			<div>
+				<div class="header">
+					<span id="fullscreen" class="button-primary">v</span>
+					<h2>Featured articles</h2>
+				</div>
+				<div id="featured">
+					<
+				</div>
+			</div>
+		</div>
+	</main>
+	</body>
+</html>

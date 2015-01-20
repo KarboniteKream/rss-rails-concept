@@ -11,7 +11,9 @@
 			<label for="<%= folder.folder %>"><%= folder.folder %></label>
 			<ul class="connected sortable">
 				<% folderSubscriptions(folder.folder).each do |subscription| %>
-					<li><a href="/home/feed?id=<%= subscription.feed_id %>" style="background-image: url(data:image/png;base64,<%= Base64.strict_encode64(subscription.icon) %>);"><%= subscription.name %></a></li>
+					<% print @feedID %>
+					<% puts subscription.feed_id %>
+					<li><a <% if @feedID.to_i == subscription.feed_id %>class="active"<% end %> href="/home/feed?id=<%= subscription.feed_id %>" style="background-image: url(data:image/png;base64,<%= Base64.strict_encode64(subscription.icon) %>);"><%= subscription.name %></a></li>
 				<% end %>
 				<li class="empty-li" />
 			</ul>
@@ -30,7 +32,9 @@
 	<article class="unread">
 		<div class="date"><%= article.date.strftime("%Y-%m-%d") %></div>
 		<h2><a href="<%= article.url %>" target="_blank"><%= article.title %></a></h2>
+		<% if article.author != nil %>
 		<div class="author">by <b><%= article.author %></b></div>
+		<% end %>
 		<div class="content">
 			<p>
 			<%= article.content.html_safe %>
