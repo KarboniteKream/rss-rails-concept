@@ -1,0 +1,1084 @@
+@import url("//fonts.googleapis.com/css?family=Raleway");
+@font-face {
+  font-family: "ModernPictogramsNormal";
+  src: url(/assets/modernpics-webfont-3f205c2083873a59e4d183f63b8d9ab8.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 11, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+* {
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 16, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+body {
+  margin: 0px;
+}
+
+/* line 21, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+a {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* line 28, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.active {
+  color: #428BCA;
+  font-weight: bold;
+}
+
+/* line 34, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.rss {
+  color: #FF6600;
+}
+
+/* line 39, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+[class^="button"] {
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* line 47, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.button-primary {
+  color: #FFFFFF;
+  background-color: #428BCA;
+  border: 1px solid #3374AC;
+}
+
+/* line 54, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.button-primary:hover {
+  background-color: #3374AC;
+}
+
+/* line 59, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.button-secondary {
+  color: #000000;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+}
+
+/* line 66, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.button-secondary:hover {
+  background-color: #CCCCCC;
+}
+
+/* line 71, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+button[type="submit"] {
+  cursor: pointer;
+}
+
+/* line 76, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+header {
+  position: relative;
+  z-index: 1;
+  height: 49px;
+  padding-left: 20px;
+  padding-right: 15px;
+  background-color: #F1F1F1;
+  border-bottom: 1px solid #AAAAAA;
+}
+
+/* line 87, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+header h1 {
+  float: left;
+  margin: 6px 0px;
+}
+
+/* line 93, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+header h1 a {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* line 99, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+nav {
+  float: right;
+}
+
+/* line 104, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+nav ul {
+  margin: 14px 0px;
+}
+
+/* Add button class. */
+/* line 110, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+body#index nav ul {
+  margin: 15px 0px;
+}
+
+/* line 115, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+body#index nav li {
+  padding: 0px 4px;
+}
+
+/* line 120, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+body nav li {
+  padding: 0px 10px;
+}
+
+/* line 125, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+nav li {
+  display: inline;
+}
+
+/* line 130, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+nav a {
+  padding: 10px 0px;
+  font-size: 18px;
+  color: #000000;
+  text-decoration: none;
+}
+
+/* line 138, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+nav span {
+  float: none !important;
+  padding: 6px 10px !important;
+}
+
+/* line 144, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+span[class^="button"] {
+  float: right;
+  padding: 5px 7px;
+  margin: 3px;
+  cursor: pointer;
+}
+
+/* line 153, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+nav a:not([class^="button"]):hover {
+  color: #609AC9;
+}
+
+/* line 158, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.version {
+  font-size: 15px;
+  font-weight: normal;
+  color: #808080;
+}
+
+/* line 165, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+p {
+  text-align: justify;
+}
+
+/* line 170, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#main {
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding: 10px;
+}
+
+/* line 180, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#sidebar {
+  float: left;
+  position: relative;
+  width: 230px;
+  height: 100%;
+}
+
+/* line 188, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#new-subscription {
+  float: none;
+  height: 19px;
+  padding: 8px 10px;
+  margin: 0px;
+  line-height: 20px;
+}
+
+/* line 197, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#add-subscription {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 35px;
+  background-color: #F1F1F1;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+}
+
+/* line 209, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#add-subscription input:not([type="submit"]) {
+  width: 155px;
+  margin-top: 5px;
+  margin-left: 3px;
+  padding: 3px;
+  padding-left: 6px;
+}
+
+/* line 218, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#add-subscription input[type="submit"] {
+  width: 47px;
+  height: 28px;
+  margin-top: 4px;
+  margin-right: 1px;
+  padding: 5px 9px;
+  font-size: 14px;
+  line-height: 5px;
+}
+
+/* line 229, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#sidebar-content {
+  position: absolute;
+  top: 41px;
+  left: 0px;
+  right: 0px;
+  bottom: -2px;
+  background-color: #F4F4F4;
+  border: 1px solid #AAAAAA;
+  border-radius: 6px;
+}
+
+/* line 241, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#sidebar-content ul {
+  list-style: none;
+}
+
+/* line 246, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#menu {
+  border-bottom: 1px solid #AAAAAA;
+}
+
+/* line 251, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#menu ul {
+  margin: 15px 0px;
+  padding-left: 15px;
+}
+
+/* line 257, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#menu li {
+  height: 22px;
+  margin-bottom: 5px;
+}
+
+/* line 263, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#subscriptions {
+  position: absolute;
+  top: 134px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding-top: 20px;
+  padding-left: 15px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* line 276, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#subscriptions ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* line 282, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#subscriptions li:not(.folder) {
+  height: 26px;
+}
+
+/* line 287, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#subscriptions li:not(.folder) a {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* line 294, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#subscriptions > ul:not(.sortable) li:not(.folder) a {
+  max-width: 140px;
+}
+
+/* line 299, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#subscriptions > ul.sortable a {
+  max-width: 160px;
+}
+
+/* line 304, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.folder {
+  position: relative;
+  margin-top: 6px;
+}
+
+/* line 310, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.folder input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 2px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* line 320, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.folder label {
+  display: block;
+  margin-bottom: 7px;
+  padding-left: 25px;
+  background: url(/assets/arrow-down-a6494f76f541605594234a63bcbbb328.png) 0px 1px no-repeat;
+  cursor: pointer;
+}
+
+/* line 329, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.folder input:checked + label {
+  background: url(/assets/arrow-right-d1124335aec104e0557b35a81359c95e.png) 0px 1px no-repeat;
+}
+
+/* line 334, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.folder input:checked + label + ul > li {
+  display: none;
+}
+
+/* line 339, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#subscriptions li ul {
+  margin-left: 20px;
+}
+
+/* line 344, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#subscriptions a,
+#menu a {
+  display: inline-block;
+  padding-left: 22px;
+  vertical-align: top;
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+
+/* line 354, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#sidebar-content a:hover {
+  color: #609AC9;
+}
+
+/* line 359, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#home {
+  background-image: url(/assets/home-289c823830ad1beaf8e09e8fbbf93ffb.png);
+}
+
+/* line 364, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#unread {
+  background-image: url(/assets/unread-a1abd64f52755515ef43a2391f8ce158.png);
+}
+
+/* line 369, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#liked {
+  background-image: url(/assets/liked-ed79bf4c0e859d2cfe954e9e80290b93.png);
+}
+
+/* line 374, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#all {
+  background-image: url(/assets/all-4364ee968b43f273f5cc16e0a804384c.png);
+}
+
+/* line 379, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.badge {
+  vertical-align: super;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* line 386, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#content {
+  position: relative;
+  height: 100%;
+  margin-left: 240px;
+  font-size: 15px;
+  border: 1px solid #AAAAAA;
+  border-radius: 6px;
+  overflow-y: auto;
+}
+
+/* line 397, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#content .header,
+#landing .header {
+  width: 100%;
+  height: 37px;
+  background-color: #F1F1F1;
+  border-bottom: 1px solid #AAAAAA;
+}
+
+/* line 406, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#content [class^="header"] h2,
+#landing [class^="header"] h2 {
+  margin: 0px;
+  padding: 6px 8px;
+}
+
+/* line 413, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#content [class^="header"] a,
+#landing [class^="header"] a {
+  float: right;
+  margin: 3px;
+  padding: 5px 7px;
+}
+
+/* line 421, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#content [class^="header-secondary"] {
+  float: right;
+  width: 50%;
+  height: 100%;
+  border-left: 1px solid #AAAAAA;
+}
+
+/* line 429, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#content .header-secondary-30 {
+  width: 30%;
+}
+
+/* line 434, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#reader,
+#featured:not(.home-right) {
+  position: absolute;
+  top: 38px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  overflow-y: auto;
+}
+
+/* line 445, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article {
+  margin: 10px 8px 16px;
+  padding: 6px 6px 0px 6px;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* line 454, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article .content pre,
+article .content blockquote {
+  margin: 0px 10px;
+  padding: 10px;
+  background-color: #F4F4F4;
+  border: 1px solid #CCCCCC;
+  border-left: 5px solid #609AC9;
+  overflow-x: auto;
+}
+
+/* line 465, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article .content code,
+article .content blockquote {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  background-color: #F4F4F4;
+}
+
+/* line 473, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article .content p code,
+article .content strong code {
+  padding: 1px 3px;
+  font-weight: normal;
+  border: 1px solid #CCCCCC;
+}
+
+/* line 481, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article .content a {
+  color: #3374AC;
+}
+
+/* line 486, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article .content * {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 491, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article .date {
+  float: right;
+}
+
+/* line 496, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article > h2 {
+  margin: 0px 2px 2px;
+  color: #000000;
+}
+
+/* line 502, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article > h2 a {
+  color: #000000;
+}
+
+/* line 507, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.author {
+  display: block;
+  margin-left: 8px;
+  margin-bottom: 15px;
+  font-size: 13px;
+}
+
+/* line 515, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article div,
+article img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 522, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article iframe {
+  max-width: 100%;
+}
+
+/* line 527, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.action-bar {
+  width: 100%;
+  margin-left: -6px;
+  margin-bottom: 0px;
+  padding: 0px 6px;
+  background-color: #F1F1F1;
+  border-top: 1px solid #CCCCCC;
+}
+
+/* line 537, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article.unread {
+  border: 1px solid #3374AC;
+}
+
+/* line 542, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article.unread .action-bar {
+  background-color: #428BCA;
+  border-top: 1px solid #3374AC;
+}
+
+/* line 548, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article.liked {
+  border: 1px solid #7851A9;
+}
+
+/* line 553, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article.liked .action-bar {
+  background-color: #856BA8;
+  border-top: 1px solid #7851A9;
+}
+
+/* line 559, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article .action-bar a,
+article .action-bar span {
+  color: #000000;
+  cursor: pointer;
+}
+
+/* line 566, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+article.unread .action-bar a,
+article.liked .action-bar a,
+article.unread .action-bar span,
+article.liked .action-bar span {
+  color: #FFFFFF;
+}
+
+/* line 574, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.action-bar a,
+.action-bar span {
+  display: inline-block;
+  margin: 4px;
+}
+
+/* line 581, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* line 592, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.popup {
+  position: fixed;
+  width: 300px;
+  left: 50%;
+  top: 80px;
+  margin-left: -150px;
+  z-index: 2;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* line 606, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#unsubscribe {
+  width: 360px;
+  margin-left: -180px;
+}
+
+/* line 612, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.popup .header {
+  width: 100%;
+  height: 33px;
+  background-color: #F1F1F1;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+/* line 620, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.popup .header span {
+  float: right;
+  width: 20px;
+  height: 20px;
+  padding: 0px 2px 3px;
+  margin: 4px 3px 0px;
+  font-size: 18px;
+}
+
+/* line 630, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.popup .header h3 {
+  margin: 0px;
+  padding: 5px 9px;
+}
+
+/* line 636, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.popup form {
+  width: 100%;
+}
+
+/* line 641, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.popup form input[type="submit"],
+.popup form button {
+  margin-left: 15px;
+}
+
+/* line 647, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+fieldset {
+  padding: 0px;
+  border: 0px none;
+}
+
+/* line 653, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.popup fieldset {
+  margin: 0px 10px 10px;
+}
+
+/* line 658, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.popup fieldset > input:not([type="checkbox"]) {
+  width: 268px;
+  height: 25px;
+  margin-top: 10px;
+  padding-left: 8px;
+}
+
+/* line 666, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.popup fieldset label {
+  display: inline-block;
+  margin-top: 10px;
+  padding-top: 9px;
+  font-size: 14px;
+}
+
+/* line 674, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+fieldset input[type="submit"],
+fieldset button {
+  float: right;
+  background-color: #428BCA;
+  color: #FFFFFF;
+  border: 1px solid #3374AC;
+  border-radius: 4px;
+}
+
+/* line 684, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.popup fieldset input[type="submit"],
+.popup fieldset button {
+  margin-top: 15px;
+  width: 75px;
+  height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* line 694, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+fieldset input[type="submit"]:hover,
+fieldset button:hover {
+  background-color: #3374AC;
+}
+
+/* line 700, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+main {
+  position: fixed;
+  top: 50px;
+  left: 0px;
+  right: 0px;
+}
+
+/* line 708, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#landing {
+  position: fixed;
+  top: 200px;
+  left: 40px;
+  right: 40px;
+  bottom: -46px;
+  padding-bottom: 11px;
+  border: 46px solid #000000;
+  border-top: 52px solid #000000;
+  border-radius: 30px;
+  background-color: #FFFFFF;
+  font-size: 15px;
+  transition: top 0.5s ease, left 0.5s ease, right 0.5s ease;
+}
+
+/* line 724, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#landing > div {
+  position: relative;
+  height: 100%;
+  margin: 5px;
+  border: 1px solid #AAAAAA;
+  border-radius: 6px;
+  overflow-y: auto;
+}
+
+/* line 734, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.fullscreen-absolute {
+  top: -2px !important;
+  left: -46px !important;
+  right: -46px !important;
+  transition: top 0.5s ease, left 0.5s ease, right 0.5s ease;
+}
+
+/* line 742, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#banner {
+  margin-top: 30px;
+  font-size: 80px;
+  text-align: center;
+}
+
+/* line 749, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.home-left,
+.home-right {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 50%;
+  overflow-y: auto;
+}
+
+/* line 759, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.home-left {
+  left: 0px;
+}
+
+/* line 764, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.home-right {
+  right: 0px;
+  border-left: 1px solid #CCCCCC;
+}
+
+/* line 770, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#widgets {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding: 10px 10px;
+}
+
+/* line 779, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.full-widget {
+  width: 100%;
+  height: auto;
+}
+
+/* line 785, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#change-email fieldset,
+#change-password fieldset {
+  margin: 10px 10px 20px 7px;
+}
+
+/* line 791, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+fieldset legend {
+  margin-bottom: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* line 798, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#change-email input,
+#change-password input {
+  width: 97%;
+  margin-bottom: 5px;
+  padding-left: 6px;
+}
+
+/* line 806, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#change-email button,
+#change-password button {
+  margin-top: 2px;
+  padding: 5px 10px;
+}
+
+/* line 813, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#change-password {
+  border-bottom: 1px solid #CCCCCC;
+}
+
+/* line 818, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#settings-content {
+  width: 70%;
+}
+
+/* line 823, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#account-content {
+  width: 30%;
+}
+
+/* line 828, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.notice {
+  text-align: center;
+}
+
+/* line 833, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#delete-account-button {
+  float: right;
+  margin: 10px 10px;
+  width: 140px;
+  border-radius: 5px;
+}
+
+/* line 841, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.button-red {
+  background-color: #DF3E3E;
+  color: #FFFFFF;
+  border: 1px solid #CC0000;
+}
+
+/* line 848, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.button-red:hover {
+  background-color: #CC0000;
+}
+
+/* line 853, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#delete-account label {
+  padding-top: 11px;
+}
+
+/* Add for float: right; */
+/* line 859, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.block {
+  display: block;
+}
+
+/* line 864, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#settings-content fieldset legend {
+  margin-bottom: 10px;
+}
+
+/* line 869, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#settings-content fieldset {
+  margin-bottom: 20px;
+}
+
+/* line 874, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.settings-button {
+  float: right;
+  padding: 5px 10px;
+  margin-right: 10px !important;
+}
+
+/* line 881, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#general-settings {
+  display: inline-block;
+  margin: 10px;
+  width: 50%;
+}
+
+/* line 888, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#user-interface {
+  display: inline-block;
+  margin: 0px 10px;
+}
+
+/* line 894, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+fieldset select {
+  margin-left: 30px;
+}
+
+/* line 899, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.input-error,
+.input-empty {
+  border: 2px solid #DF3E3E;
+  box-shadow: 0px 0px 5px #DF3E3E;
+}
+
+/* line 906, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.form-error {
+  display: inline-block;
+  width: 100%;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #DF3E3E;
+  text-align: center;
+}
+
+/* line 916, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.form-error-new {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #DF3E3E;
+  text-align: center;
+}
+
+/* line 926, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#fullscreen {
+  padding: 0px 7px 1px 7px !important;
+  font-family: "ModernPictogramsNormal";
+  font-size: 26px;
+  content: "v";
+}
+
+/* line 934, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#form-question {
+  display: block;
+  margin-top: 7px;
+  font-size: 17px;
+}
+
+/* line 941, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.empty-li {
+  height: 1px !important;
+}
+
+/* line 946, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.sortable-placeholder {
+  border: 1px dashed #CCCCCC;
+}
+
+/* line 951, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.remove-article {
+  float: right;
+  margin: 0px;
+  margin-top: 4px;
+}
+
+/* line 958, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#weather {
+  margin-bottom: 15px;
+}
+
+/* line 963, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#refreshWeather {
+  display: inline-block;
+  float: right;
+  font-size: 14px;
+  padding: 3px 6px;
+}
+
+/* line 971, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.weather-title {
+  display: block;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 5px;
+  margin-right: 10px;
+}
+
+/* line 981, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.city {
+  display: block;
+  float: left;
+  margin-top: 1px;
+  font-size: 13px;
+  font-weight: normal;
+  border: none;
+}
+
+/* line 991, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.temperature {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 4px;
+}
+
+/* line 1000, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.temperature-today {
+  margin-right: 50px;
+}
+
+/* line 1005, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.break {
+  display: block;
+  height: 25px;
+}
+
+/* line 1011, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.temperature-label {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 20px;
+  padding-top: 4px;
+}
+
+/* line 1019, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#manage-subscriptions {
+  margin-top: 3px;
+}
+
+/* line 1024, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+#subscriptionsGV {
+  margin: 10px;
+}
+
+/* line 1029, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.edit-column {
+  padding: 0px 5px;
+}
+
+/* line 1034, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.button-margin {
+  margin-left: 10px;
+}
+
+/* line 1039, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.subscription-button {
+  display: inline-block;
+  float: none !important;
+  font-size: 14px;
+  margin: 10px 3px 3px 10px !important;
+  padding: 5px 7px;
+  cursor: pointer;
+}
+
+/* line 1049, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.table-checkbox {
+  padding-right: 5px;
+}
+
+/* line 1054, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.data-name {
+  width: 225px;
+  height: 22px;
+  padding-right: 10px;
+}
+
+/* line 1061, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.data-folder {
+  width: 155px;
+  padding-right: 10px;
+}
+
+/* line 1067, /home/klemen/RSS/app/assets/stylesheets/home.scss */
+.table-header {
+  font-size: 16px;
+  text-align: left;
+  padding-bottom: 5px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
