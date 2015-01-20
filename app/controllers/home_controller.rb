@@ -10,8 +10,4 @@ class HomeController < ApplicationController
 
 	@unread = 75
   end
-
-  helper_method :like
-  def like
-  end
 end
