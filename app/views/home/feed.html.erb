@@ -1,6 +1,6 @@
 <% content_for :nullFeeds do %>
-	<% @subscriptions.each do |subscription| %>
-		<li><a id="<%= subscription.feed_id %>" style="background-image: url(data:image/png;base64,<%= Base64.strict_encode64(subscription.icon) %>);"><%= subscription.name %></a></li>
+	<% @nullSubscriptions.each do |subscription| %>
+		<li><a href="/home/feed?id=<%= subscription.feed_id %>" style="background-image: url(data:image/png;base64,<%= Base64.strict_encode64(subscription.icon) %>);"><%= subscription.name %></a></li>
 	<% end %>
 <% end %>
 
@@ -10,6 +10,9 @@
 			<input id="<%= folder.folder %>" type="checkbox" />
 			<label for="<%= folder.folder %>"><%= folder.folder %></label>
 			<ul class="connected sortable">
+				<% folderSubscriptions(folder.folder).each do |subscription| %>
+					<li><a href="/home/feed?id=<%= subscription.feed_id %>" style="background-image: url(data:image/png;base64,<%= Base64.strict_encode64(subscription.icon) %>);"><%= subscription.name %></a></li>
+				<% end %>
 				<li class="empty-li" />
 			</ul>
 		</li>

@@ -1,4 +1,6 @@
-$(document).ready(function()
+var ready;
+
+ready = function()
 {
 	$("#overlay").click(hideOverlay);
 
@@ -125,7 +127,7 @@ $(document).ready(function()
 		$("#landing").toggleClass("fullscreen-absolute");
 		($(this).text() == "v") ? $(this).text("u") : $(this).text("v");
 	});
-});
+};
 
 function validateEmail(email)
 {
@@ -147,3 +149,6 @@ function setSortable()
 		connectWith: ".connected"
 	});
 }
+
+$(document).ready(ready);
+$(document).on("page:load", ready);

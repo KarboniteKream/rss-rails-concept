@@ -9,13 +9,13 @@
 </head>
 <body>
 	<header>
-		<h1><a href="/home.aspx">kream.io</a><span class="version"> rss</span></h1>
+		<h1><a href="/">kream.io</a><span class="version"> rss</span></h1>
 		<nav>
 			<ul>
 				<!-- PARAMS -->
-				<li><a href="/Home.aspx" class="active">Home</a></li>
-				<li><a href="/Settings.aspx">Settings</a></li>
-				<li><a href="/Help.aspx">Help</a></li>
+				<li><a href="/home/feed?id=-1" class="active">Home</a></li>
+				<li><a href="/home/settings">Settings</a></li>
+				<li><a href="/home/help">Help</a></li>
 				<li><a>Sign out</a></li>
 			</ul>
 		</nav>
@@ -34,10 +34,10 @@
 			<div id="sidebar-content">
 				<div id="menu">
 					<ul>
-						<li><a id="home" href="#">Home</a></li>
-						<li><a id="unread" href="#">Unread</a><span class="badge"> <%= @unread %></span></li>
-						<li><a id="liked" href="#">Liked</a></li>
-						<li><a id="all" href="#">All articles</a></li>
+						<li><a id="home" href="/home/feed?id=-1">Home</a></li>
+						<li><a id="unread" href="/home/feed?id=-2">Unread</a><span class="badge"> <%= @unread %></span></li>
+						<li><a id="liked" href="/home/feed?id=-3">Liked</a></li>
+						<li><a id="all" href="/home/feed?id=-4">All articles</a></li>
 					</ul>
 				</div>
 				<div id="subscriptions">
