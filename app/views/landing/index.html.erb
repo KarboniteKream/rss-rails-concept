@@ -1,2 +1,93 @@
-<h1>Landing#index</h1>
-<p>Find me in app/views/landing/index.html.erb</p>
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>kream</title>
+		<meta charset="UTF-8" />
+		<%= favicon_link_tag 'favicon.png', rel: 'icon', type: 'image/png' %>
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+    </head>
+    <body id="index">
+        <header>
+			<h1><a href="/">kream.io</a><span class="version"> rss</span></h1>
+			<nav>
+				<ul>
+					<li><span class="button-secondary open-popup" target-popup="#register">Register</span></li>
+					<li><span class="button-primary open-popup" target-popup="#sign-in">Sign in</span></li>
+				</ul>
+			</nav>
+		</header>
+        <main>
+            <div id="banner">the next-generation <span class="rss">RSS</span> reader</div>
+		    <div id="landing">
+			    <div>
+				    <div class="header">
+					    <span id="fullscreen" class="button-primary">v</span>
+					    <h2>Featured articles</h2>
+				    </div>
+					<div id="featured">
+					<% featured.each do |article| %>
+						<article>
+							<div class="date"><%= article.date.strftime("%Y-%m-%d") %></div>
+							<h2><a href="<%= article.url %>" target="_blank"><%= article.title %></a></h2>
+							<% if article.author != nil %>
+							<div class="author">by <b><%= article.author %></b></div>
+							<% end %>
+							<div class="content">
+								<p>
+								<%= article.content.html_safe %>
+								</p>
+							</div>
+							<div class="action-bar">
+								<a>Like</a>
+							</div>
+						</article>
+					<% end %>
+					</div>
+			    </div>
+		    </div>
+		</main>
+        <div id="overlay" onclick="hideOverlay()"></div>
+		<div id="sign-in" class="popup">
+			<div class="header">
+				<span class="button-secondary" onclick="hideOverlay()">×</span>
+				<h3>Sign in</h3>
+			</div>
+			<%= form_for(:user, :url => {:action => "signin"}) do |form| %>
+				<fieldset>
+					<%= form.email_field :email, :placeholder => "e-mail", :tabindex => "1" %>
+					<br />
+					<%= form.password_field :password, :placeholder => "password", :tabindex => "2" %>
+					<br />
+					<%= form.submit "Sign in", :tabindex => "4" %>
+					<label for="rememberMe">
+						<input type="checkbox" id="rememberMe" tabindex="3" />
+						Remember me
+					</label>
+				</fieldset>
+			<% end %>
+		</div>
+		<div id="register" class="popup">
+			<div class="header">
+				<span class="button-secondary" onclick="hideOverlay()">×</span>
+				<h3>Register</h3>
+			</div>
+			<%= form_for(:user, :url => {:action => "register"}) do |form| %>
+				<fieldset>
+					<%= form.text_field :real_name, :placeholder => "real name" %>
+					<br />
+					<%= form.email_field :email, :placeholder => "e-mail" %>
+					<br />
+					<br />
+					<%= form.password_field :password, :placeholder => "password" %>
+					<br />
+					<%= form.password_field :password_confirmation, :placeholder => "confirm password" %>
+					<br />
+					<%= form.submit :Register %>
+				</fieldset>
+			<% end %>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<% content_for :nullFeeds do %>
+	<% nullSubscriptions.each do |subscription| %>
+		<li><a href="/home/feed?id=<%= subscription.feed_id %>" style="background-image: url(data:image/png;base64,<%= Base64.strict_encode64(subscription.icon) %>);"><%= subscription.name %></a><% if subscription.unread > 0 %><span class="badge"> <%= subscription.unread %></span><% end %></li>
+	<% end %>
+<% end %>
+
+<% content_for :folderFeeds do %>
+	<% folders.each do |folder| %>
+		<li class="folder">
+			<input id="<%= folder.folder %>" type="checkbox" />
+			<label for="<%= folder.folder %>"><%= folder.folder %></label>
+			<ul class="connected sortable">
+				<% folderSubscriptions(folder.folder).each do |subscription| %>
+					<li><a href="/home/feed?id=<%= subscription.feed_id %>" style="background-image: url(data:image/png;base64,<%= Base64.strict_encode64(subscription.icon) %>);"><%= subscription.name %></a><% if subscription.unread > 0 %><span class="badge"> <%= subscription.unread %></span><% end %></li>
+				<% end %>
+				<li class="empty-li"></li>
+			</ul>
+		</li>
+	<% end %>
+<% end %>
+
+<% content_for :header do %>
+	<div class="header-secondary">
+		<span class="button-primary">Refresh</span>
+		<h2>Featured articles</h2>
+	</div>
+	<span class="button-secondary">Settings</span>
+	<h2>Home</h2>
+<% end %>
+
+<div class="home-left">
+	<h2 class="notice">You have <%= unread %> unread articles.</h2>
+	<div id="widgets">
+		<img src="http://imgs.xkcd.com/comics/time.png" class="full-widget" title="The end." alt="Current time is unknown." />
+	</div>
+</div>
+<div class="home-right">
+<% @featured.each do |article| %>
+	<article>
+		<div class="date"><%= article.date.strftime("%Y-%m-%d") %></div>
+		<h2><a href="<%= article.url %>" target="_blank"><%= article.title %></a></h2>
+		<% if article.author != nil %>
+		<div class="author">by <b><%= article.author %></b></div>
+		<% end %>
+		<div class="content">
+			<p>
+			<%= article.content.html_safe %>
+			</p>
+		</div>
+		<div class="action-bar">
+			<a>Like</a>
+		</div>
+	</article>
+<% end %>
+</div>

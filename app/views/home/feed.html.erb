@@ -1,21 +1,19 @@
 <% content_for :nullFeeds do %>
-	<% @nullSubscriptions.each do |subscription| %>
-		<li><a href="/home/feed?id=<%= subscription.feed_id %>" style="background-image: url(data:image/png;base64,<%= Base64.strict_encode64(subscription.icon) %>);"><%= subscription.name %></a></li>
+	<% nullSubscriptions.each do |subscription| %>
+		<li><a <% if @feedID == subscription.feed_id %>class="active"<% end %> href="/home/feed?id=<%= subscription.feed_id %>" style="background-image: url(data:image/png;base64,<%= Base64.strict_encode64(subscription.icon) %>);"><%= subscription.name %></a><% if subscription.unread > 0 %><span class="badge"> <%= subscription.unread %></span><% end %></li>
 	<% end %>
 <% end %>
 
 <% content_for :folderFeeds do %>
-	<% @folders.each do |folder| %>
+	<% folders.each do |folder| %>
 		<li class="folder">
 			<input id="<%= folder.folder %>" type="checkbox" />
 			<label for="<%= folder.folder %>"><%= folder.folder %></label>
 			<ul class="connected sortable">
 				<% folderSubscriptions(folder.folder).each do |subscription| %>
-					<% print @feedID %>
-					<% puts subscription.feed_id %>
-					<li><a <% if @feedID.to_i == subscription.feed_id %>class="active"<% end %> href="/home/feed?id=<%= subscription.feed_id %>" style="background-image: url(data:image/png;base64,<%= Base64.strict_encode64(subscription.icon) %>);"><%= subscription.name %></a></li>
+					<li><a <% if @feedID == subscription.feed_id %>class="active"<% end %> href="/home/feed?id=<%= subscription.feed_id %>" style="background-image: url(data:image/png;base64,<%= Base64.strict_encode64(subscription.icon) %>);"><%= subscription.name %></a><% if subscription.unread > 0 %><span class="badge"> <%= subscription.unread %></span><% end %></li>
 				<% end %>
-				<li class="empty-li" />
+				<li class="empty-li"></li>
 			</ul>
 		</li>
 	<% end %>
@@ -25,11 +23,11 @@
 	<span class="button-primary">Refresh</span>
 	<span class="button-secondary">Settings</span>
 	<span class="button-secondary open-popup" target-popup="#unsubscribe">Unsubscribe</span>
-	<h2><%= @feed.name %></h2>
+	<h2><%= @feedName %></h2>
 <% end %>
 
 <% @articles.each do |article| %>
-	<article class="unread">
+	<article <% if article.unread == 1 %>class="unread"<% elsif article.liked == 1 %>class="liked"<% end %>>
 		<div class="date"><%= article.date.strftime("%Y-%m-%d") %></div>
 		<h2><a href="<%= article.url %>" target="_blank"><%= article.title %></a></h2>
 		<% if article.author != nil %>
@@ -41,8 +39,16 @@
 			</p>
 		</div>
 		<div class="action-bar">
+		<% if article.unread == 1 %>
 			<a>Like</a>
 			<a>Mark as read</a>
+		<% elsif article.liked == 1 %>
+			<a>Unlike</a>
+			<a>Mark as unread</a>
+		<% else %>
+			<a>Like</a>
+			<a>Mark as unread</a>
+		<% end %>
 		</div>
 	</article>
 <% end %>

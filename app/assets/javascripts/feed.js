@@ -19,9 +19,6 @@ ready = function()
 		}
 	});
 	
-	// Remove "remove" from index.html.
-	$(".action-bar").append('<span class="remove-article">Remove</span>');
-
 	$(".action-bar").on("click", ".remove-article", function()
 	{
 		$(this).parent().parent().slideUp(function()

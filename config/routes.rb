@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   get 'landing/index'
+  post 'landing/signin'
+  post 'landing/register'
 
+  get 'home/home'
   get 'home/feed'
+  get 'home/settings'
+  get 'home/help'
 
   resources :articles
   
