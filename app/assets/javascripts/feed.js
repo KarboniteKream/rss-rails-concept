@@ -2,6 +2,13 @@ var ready;
 
 ready = function()
 {
+	$.ajaxSetup({
+		headers:
+		{
+			'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+		}
+	});
+
 	$("#overlay").click(hideOverlay);
 
 	$("#overlay").hide();
@@ -57,6 +64,13 @@ ready = function()
 
 	$(".action-bar a:contains('ike')").click(function()
 	{
+		$.ajax
+		({
+			url: "/util",
+			type: "POST",
+			data: { function: "like", do: $(this).text(), id: $(this).parent().parent().attr("id") }
+		});
+
 	    $(this).parent().parent().toggleClass("liked");
 		($(this).text() == "Like") ? $(this).text("Unlike") : $(this).text("Like");
 		$(this).parent().parent().removeClass("unread");
@@ -65,6 +79,13 @@ ready = function()
 
 	$(".action-bar a:contains('read')").click(function()
 	{
+		$.ajax
+		({
+			url: "/util",
+			type: "POST",
+			data: { function: "read", do: $(this).text(), id: $(this).parent().parent().attr("id") }
+		});
+
 		$(this).parent().parent().toggleClass("unread");
 		($(this).text() == "Mark as read") ? $(this).text("Mark as unread") : $(this).text("Mark as read");
 	});

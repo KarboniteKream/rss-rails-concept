@@ -27,7 +27,7 @@
 <% end %>
 
 <% @articles.each do |article| %>
-	<article <% if article.unread == 1 %>class="unread"<% elsif article.liked == 1 %>class="liked"<% end %>>
+	<article id="<%= article.id %>" <% if article.unread == 1 %>class="unread"<% elsif article.liked == 1 %>class="liked"<% end %>>
 		<div class="date"><%= article.date.strftime("%Y-%m-%d") %></div>
 		<h2><a href="<%= article.url %>" target="_blank"><%= article.title %></a></h2>
 		<% if article.author != nil %>
