@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get 'home/feed'
   get 'home/settings'
   get 'home/help'
+  get 'home/signout'
+  post 'home/add'
+  post 'home/unsubscribe'
 
   resources :articles
   

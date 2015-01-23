@@ -10,25 +10,25 @@
 </head>
 <body>
 	<header>
-		<h1><a href="/">kream.io</a><span class="version"> rss</span></h1>
+		<h1><a href="/home/home">kream.io</a><span class="version"> rss</span></h1>
 		<nav>
 			<ul>
-				<li><a href="/home/feed?id=-1" class="active">Home</a></li>
+				<li><a href="/home/home" class="active">Home</a></li>
 				<li><a href="/home/settings">Settings</a></li>
 				<li><a href="/home/help">Help</a></li>
-				<li><a href="/landing/index">Sign out</a></li>
+				<li><%= link_to "Sign out", "signout" %></li>
 			</ul>
 		</nav>
 	</header>
 	<div id="main">
 		<div id="sidebar">
 			<span id="new-subscription" class="button-primary block">New subscription</span>
-			<form id="add-subscription">
+			<%= form_for(:subscription, :html => {:id => "add-subscription"}, :url => {:action => "add"}) do |form| %>
 				<fieldset>
-					<button type="submit" tabindex="2">Add</button>
-					<input id="subscriptionURL" placeholder="subscription URL" tabindex="1" />
+					<%= form.submit :Add, :tabindex => "2" %>
+					<%= form.text_field :url, :placeholder => "subscription URL", :tabindex => "1" %>
 				</fieldset>
-			</form>
+			<% end %>
 			<div id="sidebar-content">
 				<div id="menu">
 					<ul>
@@ -63,13 +63,13 @@
 			<span class="button-secondary" onclick="hideOverlay()">×</span>
 			<h3>Unsubscribe</h3>
 		</div>
-		<form method="post">
+		<%= form_for(:subscription, :url => {:action => "unsubscribe", :id => params[:id]}) do |form| %>
 			<fieldset>
 				<span id="form-question">Are you sure you want to unsubscribe from <%= @feedName %>?</span>
-				<button type="submit">Yes</button>
+				<%= form.submit :Yes %>
 				<button type="button" class="button-secondary" onclick="hideOverlay()" tabindex="1">No</button>
 			</fieldset>
-		</form>
+		<% end %>
 	</div>
 </body>
 </html>

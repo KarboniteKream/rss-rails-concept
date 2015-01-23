@@ -6,10 +6,57 @@ class HomeController < ApplicationController
   end
 
   def home
+    if session[:userID] == nil
+		redirect_to :controller => "landing"
+	end
+	
 	@featured = Article.joins("JOIN likeds ON id = likeds.article_id").select("articles.id, articles.title, articles.url, articles.author, articles.date, articles.content").group("likeds.article_id").order("COUNT(likeds.article_id) DESC")
   end
 
+  def signout
+	session[:userID] = nil
+	redirect_to :controller => "landing"
+  end
+
+  def unsubscribe
+	Subscription.where(:user_id => session[:userID], :feed_id => params[:id]).delete_all
+	#Unread.joins("LEFT JOIN articles ON articles.id = article_id").joins("JOIN feeds ON feeds.id = articles.feed_id").where("feeds.id = ?", params[:id]).delete_all
+	redirect_to :action => "home"
+  end
+
+  def add
+	require 'open-uri'
+
+	url = params[:subscription][:url]
+
+	if url.starts_with?("http://") == false
+		url = "http://" + url
+	end
+
+	doc = Nokogiri::XML(open(url))
+
+	name = doc.at_xpath("//channel/title").content
+	icon = open("http://www.google.com/s2/favicons?domain=" + url).read
+
+	feed = Feed.new(:name => name, :icon => icon)
+	feed.save
+
+	Subscription.new(:user_id => session[:userID], :feed_id => feed.id).save
+
+	doc.xpath("//item").each do |article|
+		temp = Article.new(:feed_id => feed.id, :title => article.at_xpath(".//title").content, :url => article.at_xpath(".//link").content, :author => nil, :date => DateTime.now, :content => article.at_xpath(".//description").content)
+		temp.save
+		Unread.new(:user_id => session[:userID], :article_id => temp.id).save
+	end
+
+	redirect_to :action => "feed", id: feed.id
+  end
+
   def feed
+    if session[:userID] == nil
+		redirect_to :controller => "landing"
+	end
+	
 	@feedID = params[:id].to_i
 
 	if(@feedID.nil? || @feedID == 0 || @feedID == -1)
